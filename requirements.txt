@@ -1,0 +1,6 @@
+streamlit
+pandas
+smtplib
+ssl
+email
+pathlib

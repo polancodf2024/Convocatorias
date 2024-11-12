@@ -1,0 +1,40 @@
+
+# Archivo de configuración para Streamlit
+
+[server]
+# Habilita la protección contra CSRF (Cross-Site Request Forgery)
+enableXsrfProtection = true
+
+# Ejecuta el servidor en modo headless (sin interfaz gráfica)
+headless = true
+
+# Desactiva la recarga automática para evitar problemas al subir archivos
+runOnSave = false
+
+# Puerto donde se ejecutará Streamlit (puedes cambiarlo si es necesario)
+port = 8501
+
+# Incrementa el tamaño máximo permitido para archivos subidos (en MB)
+maxUploadSize = 500
+
+# Directorio de trabajo para la aplicación (cambia según la ruta de tu proyecto)
+# Esto puede ayudar a Streamlit a encontrar archivos como el CSV
+workingDirectory = "/ruta/a/tu/proyecto"
+
+[theme]
+# Tema claro u oscuro
+base = "light"
+
+[client]
+# Ocultar elementos del menú para simplificar la interfaz
+hideMenuItems = true
+
+[global]
+# Desactiva la persistencia de caché para evitar datos obsoletos
+cachePersist = false
+
+[logger]
+# Ajustar el nivel de logging (debug, info, warning, error)
+level = "info"
+
+
