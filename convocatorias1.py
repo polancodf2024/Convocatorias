@@ -80,7 +80,7 @@ st.title("Registro a Convocatorias" if idioma == "Español" else "Call for Resea
 nombre_usuario = st.text_input("Nombre completo" if idioma == "Español" else "Full Name")
 email_usuario = st.text_input("Correo electrónico" if idioma == "Español" else "Email Address")
 email_confirmacion = st.text_input("Confirma tu correo electrónico" if idioma == "Español" else "Confirm Your Email")
-numero_economico = st.text_input("Número Económico" if idioma == "Español" else "Employee Number")
+numero_economico = st.text_input("Número Económico" if idioma == "Español" else "Id.")
 
 # Botón para enviar la información
 if st.button("Enviar" if idioma == "Español" else "Submit"):
@@ -91,7 +91,7 @@ if st.button("Enviar" if idioma == "Español" else "Submit"):
     elif email_usuario != email_confirmacion:
         st.error("Los correos electrónicos no coinciden." if idioma == "Español" else "The email addresses do not match.")
     elif not numero_economico:
-        st.error("Por favor, ingresa tu número económico." if idioma == "Español" else "Please enter your employee number.")
+        st.error("Por favor, ingresa tu número económico." if idioma == "Español" else "Please enter your Id.")
     else:
         # Guardar la información en el archivo CSV
         save_to_csv(nombre_usuario, email_usuario, numero_economico)
@@ -101,7 +101,7 @@ if st.button("Enviar" if idioma == "Español" else "Submit"):
             send_confirmation(email_usuario, nombre_usuario, idioma)
             # Enviar notificación al administrador
             send_notification(nombre_usuario, email_usuario, numero_economico)
-            st.success("Registro completado y correos enviados." if idioma == "Español" else "Registration completed and emails sent.")
+            st.success("Registro completado y correos enviados. Cierre la aplicación." if idioma == "Español" else "Registration completed and emails sent. Close the application.")
         except Exception as e:
             st.error(f"Error al enviar correos: {str(e)}")
 
